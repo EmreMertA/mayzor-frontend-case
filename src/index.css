@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@100;400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 .bg-mayzor {
   background-image: url('./assets/bg.png');
@@ -12,7 +17,7 @@
 .login-card {
   box-sizing: border-box;
   width: 400px;
-  height: 500px;
+  height: 475px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.9) 0%,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/mayzor-logo.png';
+import { mayzorLogo as logo } from '../assets/';
 
 type Props = {};
 

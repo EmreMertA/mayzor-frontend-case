@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import UserOperations from './pages/UserOperations';
+import Profile from './pages/Profile';
+import { UsersContext } from './context/usersContext';
 
 type Props = {};
 
 const App = (props: Props) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
+  const { isAuth } = useContext(UsersContext);
 
-  if (!isAuthenticated) {
+  if (!isAuth) {
     return (
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route path='*' element={<Navigate to='/login' replace />} />
       </Routes>
     );
@@ -24,6 +26,8 @@ const App = (props: Props) => {
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/users' element={<UserOperations />} />
+        <Route path='/users/:id' element={<Profile />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
     </Layout>
   );

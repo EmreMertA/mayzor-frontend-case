@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { mayzorLogo as logo } from '../assets/';
+import { UsersContext } from '../context/usersContext';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {};
 
 const Login: React.FC<Props> = () => {
+  const { setIsAuth } = useContext(UsersContext);
+
   const [email, setEmail] = useState<string>();
   const admin = 'emre@mayzor.net';
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email === admin) {
-      alert('Hosgeldiniz');
+      setIsAuth(true);
+      navigate('/');
     } else {
       alert('Hatali giris');
     }

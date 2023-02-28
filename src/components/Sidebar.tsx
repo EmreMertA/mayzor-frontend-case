@@ -6,7 +6,7 @@ import {
   mainPageIcon,
   userOperationsIcon,
 } from '../assets';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 type Props = {};
 
@@ -14,8 +14,13 @@ const Sidebar = (props: Props) => {
   const [navigationOpen, setNavigationOpen] = useState<boolean>(true);
   const [appsOpen, setAppsOpen] = useState<boolean>(true);
 
+  const location = useLocation();
+
+  const pathname = location.pathname.split('/')[1];
+  
+
   return (
-    <div className='flex flex-[1] min-w-[225px] h-full bg-white justify-start flex-col px-6'>
+    <div className='flex flex-[1] min-w-[240px] h-full bg-white justify-start flex-col px-6'>
       <div className='flex flex-row justify-between items-center  mt-2 py-3'>
         <img src={profileIcon} alt='profile' />
         <div className='text-xs'>
@@ -37,7 +42,11 @@ const Sidebar = (props: Props) => {
           </div>
 
           {navigationOpen && (
-            <div className='flex flex-col mt-2 space-y-2'>
+            <div
+              className={`flex flex-col mt-2 space-y-2 duration-300 px-3 py-2 rounded-full ${
+                location.pathname === '/' && 'bg-[#EBF7ED]'
+              }`}
+            >
               <Link to='/' className='flex flex-row space-x-3'>
                 <img src={mainPageIcon} alt='' />
                 <h1>Anasayfa</h1>
@@ -57,7 +66,11 @@ const Sidebar = (props: Props) => {
           </div>
 
           {appsOpen && (
-            <div className='flex flex-col mt-2 space-y-2 duration-300'>
+            <div
+              className={`flex flex-col mt-2 space-y-2 duration-300 px-3 py-2 rounded-full ${
+                pathname === 'users' && 'bg-[#EBF7ED]'
+              }`}
+            >
               <Link to='/users' className='flex flex-row space-x-3'>
                 <img src={userOperationsIcon} alt='' />
                 <h1>Kullanıcı İşlemleri</h1>

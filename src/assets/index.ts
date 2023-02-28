@@ -7,6 +7,9 @@ import arrowIcon from './arrow.svg';
 import powerIcon from './power.svg';
 import mainPageIcon from './main-page.svg';
 import userOperationsIcon from './user-operations.svg';
+import pencilIcon from './pencil.svg';
+import trashIcon from './trash.svg';
+import profileIcon2 from './profile2.png';
 
 export {
   mayzorLogo,
@@ -18,4 +21,7 @@ export {
   powerIcon,
   mainPageIcon,
   userOperationsIcon,
+  pencilIcon,
+  trashIcon,
+  profileIcon2,
 };

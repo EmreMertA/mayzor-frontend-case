@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { arrowIcon, profileIcon2, trashIcon } from '../assets';
+import { arrowIcon, calendarIcon, profileIcon2, trashIcon } from '../assets';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UsersContext } from '../context/usersContext';
 
@@ -92,11 +92,18 @@ const Profile = (props: Props) => {
           <label className='text-[#4C5F82] ml-2' htmlFor='email'>
             Doğum Tarihi
           </label>
-          <input
-            value='gg.aa.yyyy'
-            className='b g-[#FCFCFC] border border-[#E1EDFF] rounded-full w-64 h-10 pl-5 focus:outline-none text-[#8F9BAE]'
-            type='text'
-          />
+          <div className=' justify-center relative'>
+            <input
+              value='gg.aa.yyyy'
+              className='b g-[#FCFCFC] border border-[#E1EDFF] rounded-full w-64 h-10 pl-5 focus:outline-none text-[#8F9BAE] '
+              type='text'
+            />
+            <img
+              src={calendarIcon}
+              alt=''
+              className='absolute right-3 top-3 w-5 h-5'
+            />
+          </div>
         </div>
       </div>
       <div className='absolute bottom-5 left-0 right-0 flex justify-center space-x-4'>

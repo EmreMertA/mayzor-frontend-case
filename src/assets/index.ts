@@ -10,6 +10,7 @@ import userOperationsIcon from './user-operations.svg';
 import pencilIcon from './pencil.svg';
 import trashIcon from './trash.svg';
 import profileIcon2 from './profile2.png';
+import calendarIcon from './calendar.svg';
 
 export {
   mayzorLogo,
@@ -24,4 +25,5 @@ export {
   pencilIcon,
   trashIcon,
   profileIcon2,
+  calendarIcon,
 };

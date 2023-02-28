@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import {
   profileIcon,
   powerIcon,
@@ -6,7 +6,8 @@ import {
   mainPageIcon,
   userOperationsIcon,
 } from '../assets';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { UsersContext } from '../context/usersContext';
 
 type Props = {};
 
@@ -14,10 +15,15 @@ const Sidebar = (props: Props) => {
   const [navigationOpen, setNavigationOpen] = useState<boolean>(true);
   const [appsOpen, setAppsOpen] = useState<boolean>(true);
 
+  const { setIsAuth } = useContext(UsersContext);
+
   const location = useLocation();
 
   const pathname = location.pathname.split('/')[1];
-  
+
+  const handleLogout = () => {
+    setIsAuth(false);
+  };
 
   return (
     <div className='flex flex-[1] min-w-[240px] h-full bg-white justify-start flex-col px-6'>
@@ -27,7 +33,9 @@ const Sidebar = (props: Props) => {
           <h1 className='font-bold'>emre@mayzor.net</h1>
           <p>Yönetici</p>
         </div>
-        <img src={powerIcon} alt='power' />
+        <button onClick={() => handleLogout()}>
+          <img src={powerIcon} alt='power' />
+        </button>
       </div>
       <div className='mt-10'>
         {/* Navigasyon */}

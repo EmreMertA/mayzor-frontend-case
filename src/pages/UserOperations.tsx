@@ -20,7 +20,7 @@ const UserOperations = (props: Props) => {
   };
 
   return (
-    <div className='w-full h-full flex justify-center items-start p-5 pr-10   bg-white rounded-xl'>
+    <div className='w-full h-full flex justify-center items-center p-5 pr-10  bg-white rounded-xl'>
       <div className='w-full h-full max-h-[70vh] flex justify-center items-start bg-white rounded-xl   overflow-y-scroll pr-10 '>
         <table className='w-full text-sm text-left text-gray-500    '>
           <thead className='text-xs  uppercase border-b text-black font-bold text-center '>

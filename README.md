@@ -1,2 +1,2 @@
 # mayzor-test-case
-#login mail: emre@mayzor.net
+login mail: emre@mayzor.net

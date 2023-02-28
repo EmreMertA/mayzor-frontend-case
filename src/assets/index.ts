@@ -11,6 +11,7 @@ import pencilIcon from './pencil.svg';
 import trashIcon from './trash.svg';
 import profileIcon2 from './profile2.png';
 import calendarIcon from './calendar.svg';
+import changeProfileIcon from './change-profile.png';
 
 export {
   mayzorLogo,
@@ -26,4 +27,5 @@ export {
   trashIcon,
   profileIcon2,
   calendarIcon,
+  changeProfileIcon,
 };

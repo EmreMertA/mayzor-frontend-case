@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { arrowIcon, calendarIcon, profileIcon2, trashIcon } from '../assets';
+import {
+  arrowIcon,
+  calendarIcon,
+  changeProfileIcon,
+  profileIcon2,
+  trashIcon,
+} from '../assets';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UsersContext } from '../context/usersContext';
 
@@ -54,7 +60,10 @@ const Profile = (props: Props) => {
       </div>
 
       <div className='flex flex-row py-16 space-x-5 '>
-        <img src={profileIcon2} className='w-40 h-40' alt='' />
+        <div className='relative'>
+          <img src={profileIcon2} className='w-42 h-42' alt='' />
+          <img src={changeProfileIcon} alt='' className='bottom-44 right-1 absolute w-18 h-18' />
+        </div>
         <div className='flex flex-col space-y-2 '>
           <label className='text-[#4C5F82] ml-2' htmlFor='name'>
             Adı-Soyadı

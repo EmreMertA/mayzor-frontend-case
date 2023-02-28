@@ -15,7 +15,7 @@ const UserOperations = (props: Props) => {
     if (window.confirm('Silmek istediğinize emin misiniz?')) {
       deleteUser(id);
     }
-
+  
     return;
   };
 
